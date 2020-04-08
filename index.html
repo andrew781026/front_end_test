@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首頁</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+    <script>
+        window.onload = function() {
+
+            // 创建一个 Counter 组件
+            const MyLink = {
+                name: "MyLink",
+                template: `<h1>
+                    <a :href="href">第{{n}}問：</a>
+                </h1>`,
+                props: {
+                    n: Number
+                },
+                data(){
+
+                    function formatter(n){
+                        return n > 9 ? "" + n: "0" + n;
+                    }
+
+                    return {href:`test${formatter(this.n)}.html`}
+                }
+            }
+
+            const app = new Vue({
+                el: '#app',
+                components: {MyLink},
+                template: `
+                <div class="app">
+                  <my-link v-for="q in 11" :n="q"></my-link>
+                </div>
+              `
+            })
+        };
+    </script>
+</head>
+<body>
+<div id="app"></div>
+</body>
+</html>

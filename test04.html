@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test-04</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script>
+        function testFunction(testIds) {
+            var id = 100
+            for (let i = 0; i < testIds.length; i++) {
+                testIds[i] = function () {
+                    return id + i
+                }
+            }
+            return testIds
+        }
+
+        var testIds = [1,2,3]
+        var testFunctionResult = testFunction(testIds) // testFunctionResult = [ _ => 100+0 ,  _ => 100+1 ,  _ => 100+2 ]
+        var id = testFunctionResult[1]
+        console.log(id())
+    </script>
+</head>
+<body>
+<h1>問題四：</h1>
+<img src="question/test-04.png" alt="question-04">
+<h1>答案：</h1>
+<img src="answer/test-04.png" alt="answer-04">
+<a href="index.html"><div class="button">回首頁</div></a>
+</body>
+</html>

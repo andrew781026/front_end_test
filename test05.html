@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test-05</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script>
+        var a = 1
+        var b = 1
+
+        function test(a) {
+            this.a = 2
+        }
+
+        var avalue = new test().a
+        console.log(++avalue)
+        console.log(new test().a)
+
+        function test1(a) {
+            this.b = 9
+        }
+
+        test1.prototype.b = -1
+        test1.prototype.c = 10
+
+        console.log(new test1().b)
+        console.log(new test1().c)
+    </script>
+</head>
+<body>
+<h1>問題五：</h1>
+<img src="question/test-05.png" alt="question-05">
+<h1>答案：</h1>
+<img src="answer/test-05.png" alt="answer-05">
+<a href="index.html"><div class="button">回首頁</div></a>
+</body>
+</html>
